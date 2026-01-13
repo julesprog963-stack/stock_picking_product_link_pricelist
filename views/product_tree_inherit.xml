@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_product_tree_view_receipt" model="ir.ui.view">
+        <field name="name">product.product.tree.receipt.pricelist</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" eval="False"/>
+        <field name="arch" type="xml">
+            <tree string="Products" sample="1">
+                <field name="name"/>
+                <field name="default_code" optional="show" readonly="1"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="x_pricelist_currency_id" column_invisible="True"/>
+                <field name="list_price" string="Sales Price" widget="monetary"
+                    options="{'currency_field': 'currency_id'}" optional="show"/>
+                <field name="standard_price" widget="monetary"
+                    options="{'currency_field': 'cost_currency_id'}" optional="show" readonly="1"/>
+                <field name="x_pricelist_price" string="Pricelist Price" widget="monetary"
+                    options="{'currency_field': 'x_pricelist_currency_id'}" readonly="1" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_template_tree_view_receipt" model="ir.ui.view">
+        <field name="name">product.template.tree.receipt.pricelist</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" eval="False"/>
+        <field name="arch" type="xml">
+            <tree string="Products" sample="1">
+                <field name="name"/>
+                <field name="default_code" optional="show"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="x_pricelist_currency_id" column_invisible="True"/>
+                <field name="list_price" string="Sales Price" widget="monetary"
+                    options="{'currency_field': 'currency_id'}" optional="show"/>
+                <field name="standard_price" widget="monetary"
+                    options="{'currency_field': 'cost_currency_id'}" optional="show" readonly="1"/>
+                <field name="x_pricelist_price" string="Pricelist Price" widget="monetary"
+                    options="{'currency_field': 'x_pricelist_currency_id'}" readonly="1" optional="show"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

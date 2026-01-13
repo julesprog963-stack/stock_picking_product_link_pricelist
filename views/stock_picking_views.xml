@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_receipt_products_button" model="ir.ui.view">
+        <field name="name">stock.picking.form.receipt.products.button</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]/button[@name='action_view_products']" position="replace"/>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button
+                    class="oe_stat_button"
+                    icon="fa-list"
+                    type="object"
+                    name="action_view_products"
+                    invisible="state != 'done'"
+                    help="This displays the amount of products (variants) in the
+                    stock transfer. If you do not have product variants enabled, but
+                    somehow someone else did, there exists a rare case where the
+                    amount displayed is higher than the amount of products you see
+                    when clicking on this button."
+                >
+                    <field string="Products" name="product_count" widget="statinfo" />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

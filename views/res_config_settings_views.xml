@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_receipt_pricelist" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.receipt.pricelist</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='product_general_settings']" position="after">
+                <block title="Receipts Pricelist" id="receipt_pricelist_settings">
+                    <setting id="receipt_pricelist_setting" string="Pricelist for receipt report"
+                        help="Used when opening received products from done pickings.">
+                        <field name="x_receipt_pricelist_id" options="{'no_create': True}"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
