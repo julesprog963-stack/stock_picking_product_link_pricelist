@@ -4,7 +4,7 @@
     "summary": "Show cost, list price, and pricelist price in received products list",
     "images": ["static/description/icon.png"],
     "author": "Local",
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     "depends": ["stock_picking_product_link_port_v17", "product"],
     "data": [
         "views/product_tree_inherit.xml",
